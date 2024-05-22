@@ -1,0 +1,80 @@
+{
+  "name": "codesplain",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8000",
+  "prisma": {
+    "schema": "server/prisma/schema.prisma"
+  },
+  "scripts": {
+    "postinstall": "npx prisma generate",
+    "start": "concurrently \"yarn:start:server\" \"yarn:start:client\"",
+    "start:client": "react-scripts start",
+    "start:server": "nodemon --watch server server/index.mjs",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "yarn lint --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "yarn prettier --write",
+    "format": "yarn prettier:fix && yarn lint:fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@exuanbo/file-icons-js": "^3.3.0",
+    "@monaco-editor/react": "^4.4.6",
+    "@primer/octicons-react": "^17.9.0",
+    "@prisma/client": "^4.7.0",
+    "axios": "0.21.4",
+    "classnames": "^2.3.2",
+    "concurrently": "^7.6.0",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "monaco-editor": "^0.48.0",
+    "nodemon": "^2.0.20",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.4",
+    "react-scripts": "5.0.1",
+    "react-split": "^2.0.14",
+    "swr": "^2.0.0",
+    "validate.js": "^0.13.1",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "globals": "^15.3.0",
+    "msw": "^0.44.2",
+    "typescript": "5.2.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.3.0",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-jest-dom": "^4.0.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "tailwindcss": "^3.3.3",
+    "@tailwindcss/forms": "^0.5.3"
+  }
+}
