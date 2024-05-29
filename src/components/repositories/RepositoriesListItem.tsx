@@ -8,7 +8,7 @@ function RepositoriesListItem({ repository }: { repository: IRepository }) {
   const { full_name, language, description, owner, name } = repository
 
   return (
-    <div className="flex border-b py-3">
+    <div className="flex border-b py-3" data-testid="repository-container">
       <FileIcon name={language ?? ''} className="w-6 shrink pt-1" />
       <div>
         {owner && (
